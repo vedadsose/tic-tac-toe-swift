@@ -896,6 +896,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B356E223C83C7F85F4F1D94733530D60 /* Pods-tictactoe.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -963,6 +964,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3305FF3742850F1B6133C725CF70FDB4 /* Pods-tictactoe.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

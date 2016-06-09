@@ -35,11 +35,47 @@
                     <navigationItem key="navigationItem" title="Tic Tac Toe" id="ssI-58-qQ9"/>
                     <connections>
                         <outlet property="playButton" destination="moO-gb-Rg7" id="9ml-eS-uMs"/>
+                        <segue destination="VH5-nU-6Kh" kind="show" identifier="GoToGame" id="uxV-sq-yu5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="348"/>
+            <point key="canvasLocation" x="1173" y="348"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="38G-IP-MAd">
+            <objects>
+                <viewController id="VH5-nU-6Kh" customClass="GameViewController" customModule="tictactoe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zXC-Wv-XvD"/>
+                        <viewControllerLayoutGuide type="bottom" id="6EF-K2-hDO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Zn-ll-R0r">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFC-0P-SDu">
+                                <rect key="frame" x="150" y="118" width="300" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="NSM-iu-8fZ"/>
+                                    <constraint firstAttribute="height" constant="300" id="dTE-pt-ZFP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.23669709259999999" green="0.56462823279999996" blue="0.81691810340000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="IFC-0P-SDu" firstAttribute="centerX" secondItem="6Zn-ll-R0r" secondAttribute="centerX" id="Z9L-VY-kRK"/>
+                            <constraint firstItem="IFC-0P-SDu" firstAttribute="centerY" secondItem="6Zn-ll-R0r" secondAttribute="centerY" id="g5g-Dr-4SZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="board" destination="IFC-0P-SDu" id="UFM-zp-kd5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Enf-xp-5sG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1819" y="348"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9Yw-9v-lTk">

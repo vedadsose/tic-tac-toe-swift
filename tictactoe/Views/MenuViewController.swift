@@ -18,8 +18,9 @@ class MenuViewController: UIViewController {
     playButton.addTarget(self, action: #selector(startGame), forControlEvents: .TouchUpInside)
   }
 
+  // Open game view on start click
   func startGame() {
-    print("idemo")
+    self.performSegueWithIdentifier("GoToGame", sender: self)
   }
   
 }

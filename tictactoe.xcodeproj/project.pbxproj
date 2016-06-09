@@ -15,6 +15,9 @@
 		969FECCC1D007D7A002A708C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969FECCA1D007D7A002A708C /* LaunchScreen.storyboard */; };
 		969FECD71D007D7A002A708C /* tictactoeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969FECD61D007D7A002A708C /* tictactoeTests.swift */; };
 		969FECE21D007D7A002A708C /* tictactoeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969FECE11D007D7A002A708C /* tictactoeUITests.swift */; };
+		96BEC94D1D0A064F0000D0B3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BEC94C1D0A064F0000D0B3 /* GameViewController.swift */; };
+		96BEC9511D0A0C1D0000D0B3 /* UIFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BEC9501D0A0C1D0000D0B3 /* UIFieldView.swift */; };
+		96BEC9531D0A12430000D0B3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BEC9521D0A12430000D0B3 /* Game.swift */; };
 		96F6EC3A1D060766004D98D9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F6EC391D060766004D98D9 /* MenuViewController.swift */; };
 		EAC36D7C01C0B8EA91778F34 /* Pods_tictactoeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB060F3AE2820C7D433BED63 /* Pods_tictactoeTests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +59,9 @@
 		969FECDD1D007D7A002A708C /* tictactoeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tictactoeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		969FECE11D007D7A002A708C /* tictactoeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tictactoeUITests.swift; sourceTree = "<group>"; };
 		969FECE31D007D7A002A708C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96BEC94C1D0A064F0000D0B3 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = Views/GameViewController.swift; sourceTree = "<group>"; };
+		96BEC9501D0A0C1D0000D0B3 /* UIFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIFieldView.swift; path = Views/UIFieldView.swift; sourceTree = "<group>"; };
+		96BEC9521D0A12430000D0B3 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		96F6EC391D060766004D98D9 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Views/MenuViewController.swift; sourceTree = "<group>"; };
 		AB060F3AE2820C7D433BED63 /* Pods_tictactoeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tictactoeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3822EB5A29B7242F672D81 /* Pods-tictactoeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tictactoeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tictactoeUITests/Pods-tictactoeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 		969FECC01D007D7A002A708C /* tictactoe */ = {
 			isa = PBXGroup;
 			children = (
+				96BEC9521D0A12430000D0B3 /* Game.swift */,
 				96F6EC3B1D06076B004D98D9 /* Views */,
 				969FECC11D007D7A002A708C /* AppDelegate.swift */,
 				969FECC81D007D7A002A708C /* Assets.xcassets */,
@@ -169,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				96F6EC391D060766004D98D9 /* MenuViewController.swift */,
+				96BEC94C1D0A064F0000D0B3 /* GameViewController.swift */,
+				96BEC9501D0A0C1D0000D0B3 /* UIFieldView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -436,6 +445,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				969FECC21D007D7A002A708C /* AppDelegate.swift in Sources */,
+				96BEC9531D0A12430000D0B3 /* Game.swift in Sources */,
+				96BEC9511D0A0C1D0000D0B3 /* UIFieldView.swift in Sources */,
+				96BEC94D1D0A064F0000D0B3 /* GameViewController.swift in Sources */,
 				96F6EC3A1D060766004D98D9 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
