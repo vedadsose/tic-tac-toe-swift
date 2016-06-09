@@ -24,8 +24,39 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Starscream.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>120933232C99A92CCFC755CD070F8775</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>463D99408BA73315DDE49E21AA701790</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6BFD8F1FF693E7B82F985C1774A24A99</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A7CA34D6DC7C3679E82731A7C837EBF5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B88C8B3E330ACB338CC46D86C338AA4B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

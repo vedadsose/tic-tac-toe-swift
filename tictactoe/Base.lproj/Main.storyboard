@@ -1,25 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qtN-oe-Mgj">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tic Tac Toe-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Menu" id="BYZ-38-t0r" customClass="MenuViewController" customModule="tictactoe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moO-gb-Rg7">
+                                <rect key="frame" x="240" y="208" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="6D8-cE-gLi"/>
+                                    <constraint firstAttribute="height" constant="120" id="HHp-bX-QrK"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Play"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.23669709263015548" green="0.56462823275862073" blue="0.81691810344827587" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="moO-gb-Rg7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Qho-SK-fbL"/>
+                            <constraint firstItem="moO-gb-Rg7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TgQ-qz-f1d"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Tic Tac Toe" id="ssI-58-qQ9"/>
+                    <connections>
+                        <outlet property="playButton" destination="moO-gb-Rg7" id="9ml-eS-uMs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1117" y="348"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9Yw-9v-lTk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qtN-oe-Mgj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" id="mS7-FO-Kxa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.23669709259999999" green="0.56462823279999996" blue="0.81691810340000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.23669709259999999" green="0.56462823279999996" blue="0.81691810340000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vGv-WV-PCm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4RQ-Z2-zNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="333" y="348"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Play" width="64" height="64"/>
+    </resources>
 </document>
