@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 enum FieldState {
   case Empty
@@ -48,7 +49,7 @@ class UIFieldView: UIImageView {
       fatalError("Game not defined")
     }
     
-    state = game.move(x, y: y)
+    game.dispatch(["x": x, "y": y])
     self.setImage()
   }
   

@@ -7,6 +7,7 @@ target 'tictactoe' do
   # Pods for tictactoe
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
   pod 'Starscream'
+  pod 'SwiftyJSON'
 
   target 'tictactoeTests' do
     inherit! :search_paths

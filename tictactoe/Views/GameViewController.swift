@@ -8,23 +8,28 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, SubscriberDelegate {
   
   // Outlets
   @IBOutlet weak var board: UIView!
   
+  // Listening to the state
+  func update(state: GameState) {
+    print("Update ", state)
+  }
+  
   // Render the board
   override func viewDidLoad() {
     super.viewDidLoad()
+        
+    // Subscribe to app delegate
+    game.subscribe(self)
     
-    // Initialize the game
-    let game = Game(size: 3)
+    let fieldViews = generateFields(3, size: Int(board.frame.width/3))
     
-    let imageViews = generateFields(3, size: Int(board.frame.width/3))
-    
-    for imageView in imageViews {
-      imageView.game = game
-      board.addSubview(imageView)
+    for fieldView in fieldViews {
+      fieldView.game = game
+      board.addSubview(fieldView)
     }
   }
   

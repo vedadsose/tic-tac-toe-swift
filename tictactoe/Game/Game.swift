@@ -8,11 +8,36 @@
 
 import Foundation
 
+struct GameState {
+  
+}
+
 class Game {
   var board:[[FieldState]]?
   
   init(size: Int) {
     board = parseBoard(emptyBoard(size))
+  }
+  
+  // Subscribers handling
+  private var subscribers = [SubscriberDelegate]()
+  
+  func subscribe(subscriber: SubscriberDelegate) {
+    subscribers.append(subscriber)
+  }
+  
+  // Notifying the subscribers
+  func notify(state: GameState) {
+    for subscriber in subscribers {
+      subscriber.update(state)
+    }
+  }
+  
+  // Dispatch function
+  func dispatch(action: [String: AnyObject]) -> GameState {
+    let state = GameState()
+    notify(state)
+    return state
   }
   
   // Create empty board
@@ -57,7 +82,7 @@ class Game {
       return .Empty
     }
   }
-  
+  /*
   func move(x: Int, y: Int) -> FieldState {
     guard var board = board else {
       print("Board not defined")
@@ -72,6 +97,6 @@ class Game {
     }
 
     return self.board![x][y]
-  }
+  }*/
   
 }
