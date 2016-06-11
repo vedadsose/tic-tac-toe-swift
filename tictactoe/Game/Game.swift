@@ -7,16 +7,20 @@
 //
 
 import Foundation
+import SocketIOClientSwift
+import SwiftyJSON
 
 struct GameState {
   
 }
 
 class Game {
-  var board:[[FieldState]]?
+  var state:GameState?
+  let socket = SocketIOClient(socketURL: NSURL(string: "http://localhost:3000")!, options: [.Log(true), .ForcePolling(true)])
   
   init(size: Int) {
-    board = parseBoard(emptyBoard(size))
+//    board = parseBoard(emptyBoard(size))
+    startListening()
   }
   
   // Subscribers handling
@@ -34,10 +38,26 @@ class Game {
   }
   
   // Dispatch function
-  func dispatch(action: [String: AnyObject]) -> GameState {
+  func dispatch(action: JSON) -> GameState {
     let state = GameState()
     notify(state)
+    if action["type"] == "MOVE" {
+      socket.emit("update", action.object)
+    }
     return state
+  }
+  
+  // Web socket listener
+  func startListening() {
+    socket.on("connect") {data, ack in
+      self.socket.emit("join", 420)
+    }
+    
+    socket.on("update") { data, ack in
+      self.state = self.dispatch(JSON(arrayLiteral: data))
+    }
+    
+    socket.connect()
   }
   
   // Create empty board

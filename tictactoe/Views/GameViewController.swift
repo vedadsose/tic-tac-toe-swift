@@ -36,17 +36,12 @@ class GameViewController: UIViewController, SubscriberDelegate {
   // Generate field views
   func generateFields(n: Int, size: Int) -> [UIFieldView] {
     var fieldViews = [UIFieldView]()
-    
-    var row = 0
-    for i in 0 ..< n*n {
-      let y = ((row+1)*3-i-1)
-      let fieldView = UIFieldView(x: row, y: y, state: .Empty)
-      fieldView.frame = CGRect(x: size*row, y: size*y, width: size, height: size)
-      fieldViews.append(fieldView)
-      
-      // Increment row after we're done with one
-      if((i+1) % 3 == 0) {
-       row += 1
+
+    for i in 0 ..< n {
+      for n in 0 ..< n {
+        let fieldView = UIFieldView(x: n, y: i, state: .Empty)
+        fieldView.frame = CGRect(x: size*n, y: size*i, width: size, height: size)
+        fieldViews.append(fieldView)
       }
     }
     
