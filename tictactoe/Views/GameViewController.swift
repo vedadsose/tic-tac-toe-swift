@@ -16,6 +16,14 @@ class GameViewController: UIViewController, SubscriberDelegate {
   // Listening to the state
   func update(state: GameState) {
     print("Update ", state)
+    
+    board.subviews.forEach({ field in
+      if let field = field as? UIFieldView {
+        field.state = state.board[field.y][field.x]
+        print("update state", state.board[field.y][field.x])
+        field.setImage()
+      }
+    })
   }
   
   // Render the board

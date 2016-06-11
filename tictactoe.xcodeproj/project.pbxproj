@@ -10,7 +10,7 @@
 		0BA99F1DD5E189EDF7CCE15B /* Pods_tictactoeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A1A540FCECCE63E69A4DF8 /* Pods_tictactoeUITests.framework */; };
 		7BB13F685FAFF0FE2C185DE6 /* Pods_tictactoe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D7532E2CE2338B8AAA801B /* Pods_tictactoe.framework */; };
 		965C40E21D0B83F1003A5F44 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C40E11D0B83F1003A5F44 /* Game.swift */; };
-		965C40E41D0B84C4003A5F44 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C40E31D0B84C4003A5F44 /* Actions.swift */; };
+		965C40E41D0B84C4003A5F44 /* Mutate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C40E31D0B84C4003A5F44 /* Mutate.swift */; };
 		965C40E61D0B85EE003A5F44 /* SubscriberDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C40E51D0B85EE003A5F44 /* SubscriberDelegate.swift */; };
 		969FECC21D007D7A002A708C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969FECC11D007D7A002A708C /* AppDelegate.swift */; };
 		969FECC71D007D7A002A708C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969FECC51D007D7A002A708C /* Main.storyboard */; };
@@ -50,7 +50,7 @@
 		51184CB3BAE4372EC8C3D4F4 /* Pods-tictactoe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tictactoe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tictactoe/Pods-tictactoe.debug.xcconfig"; sourceTree = "<group>"; };
 		765FB6917C5EC4EE1ACBA189 /* Pods-tictactoeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tictactoeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tictactoeTests/Pods-tictactoeTests.release.xcconfig"; sourceTree = "<group>"; };
 		965C40E11D0B83F1003A5F44 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		965C40E31D0B84C4003A5F44 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		965C40E31D0B84C4003A5F44 /* Mutate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mutate.swift; sourceTree = "<group>"; };
 		965C40E51D0B85EE003A5F44 /* SubscriberDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriberDelegate.swift; sourceTree = "<group>"; };
 		969FECBE1D007D79002A708C /* tictactoe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tictactoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		969FECC11D007D7A002A708C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				965C40E11D0B83F1003A5F44 /* Game.swift */,
-				965C40E31D0B84C4003A5F44 /* Actions.swift */,
+				965C40E31D0B84C4003A5F44 /* Mutate.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -460,7 +460,7 @@
 			files = (
 				969FECC21D007D7A002A708C /* AppDelegate.swift in Sources */,
 				965C40E61D0B85EE003A5F44 /* SubscriberDelegate.swift in Sources */,
-				965C40E41D0B84C4003A5F44 /* Actions.swift in Sources */,
+				965C40E41D0B84C4003A5F44 /* Mutate.swift in Sources */,
 				965C40E21D0B83F1003A5F44 /* Game.swift in Sources */,
 				96BEC9511D0A0C1D0000D0B3 /* UIFieldView.swift in Sources */,
 				96BEC94D1D0A064F0000D0B3 /* GameViewController.swift in Sources */,

@@ -11,15 +11,17 @@ import SocketIOClientSwift
 import SwiftyJSON
 
 struct GameState {
-  
+  var room: Int
+  var board: [[FieldState]]
 }
 
 class Game {
-  var state:GameState?
+  var state:GameState? = nil
   let socket = SocketIOClient(socketURL: NSURL(string: "http://localhost:3000")!, options: [.Log(true), .ForcePolling(true)])
   
   init(size: Int) {
-//    board = parseBoard(emptyBoard(size))
+    let board = parseBoard(emptyBoard(size))
+    state = GameState(room: 420, board: board)
     startListening()
   }
   
@@ -38,13 +40,17 @@ class Game {
   }
   
   // Dispatch function
-  func dispatch(action: JSON) -> GameState {
-    let state = GameState()
-    notify(state)
+  func dispatch(action: JSON) {
+    guard let state = state else {
+      print("State not initialized")
+      return
+    }
+    
+    self.state = mutate(action, state: state)
+    notify(self.state!)
     if action["type"] == "MOVE" {
       socket.emit("update", action.object)
     }
-    return state
   }
   
   // Web socket listener
@@ -54,7 +60,7 @@ class Game {
     }
     
     socket.on("update") { data, ack in
-      self.state = self.dispatch(JSON(arrayLiteral: data))
+      self.dispatch(JSON(arrayLiteral: data[0])[0])
     }
     
     socket.connect()
