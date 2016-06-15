@@ -13,6 +13,10 @@ import SwiftyJSON
 struct GameState {
   var room: Int
   var board: [[FieldState]]
+  var nowPlaying: Int = 2
+  func won() -> Bool {
+    return false
+  }
 }
 
 class Game {

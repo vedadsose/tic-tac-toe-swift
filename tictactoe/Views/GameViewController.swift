@@ -22,8 +22,7 @@ class GameViewController: UIViewController, SubscriberDelegate {
     
     board.subviews.forEach({ field in
       if let field = field as? UIFieldView {
-        field.state = state.board[field.y][field.x]
-        print("update state", state.board[field.y][field.x])
+        field.state = state.board[field.x][field.y]
         field.setImage()
       }
     })
@@ -55,7 +54,7 @@ class GameViewController: UIViewController, SubscriberDelegate {
 
     for i in 0 ..< n {
       for n in 0 ..< n {
-        let fieldView = UIFieldView(x: n, y: i, state: .Empty)
+        let fieldView = UIFieldView(x: i, y: n, state: .Empty)
         fieldView.frame = CGRect(x: size*n, y: size*i, width: size, height: size)
         fieldViews.append(fieldView)
       }

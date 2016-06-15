@@ -10,18 +10,37 @@ import Foundation
 import SwiftyJSON
 
 func mutate(action: JSON, state: GameState?) -> GameState {
-  var nextState = state
+  var nextState: GameState
+  if let state = state {
+    nextState = state
+  } else {
+    nextState = GameState(room: action["room"].intValue, board: parseBoard(emptyBoard()), nowPlaying: 2)
+  }
   
   switch action["type"].stringValue {
     case "MOVE":
-      nextState!.board[action["y"].intValue][action["x"].intValue] = action["player"].intValue == 1 ? .X : .O
-      return nextState!
+      let x = action["x"].intValue
+      let y = action["y"].intValue
+      
+      // Can't move if it's not user's turn to play
+      if (action["player"].intValue != nextState.nowPlaying) { return nextState }
+      
+      // Can't play already played field
+      if (nextState.board[x][y] != .Empty) { return nextState }
+      
+      // Can't play if someone won
+      if(nextState.won()) { return nextState }
+      
+      nextState.board[x][y] = action["player"].intValue == 1 ? .X : .O
+      nextState.nowPlaying = 1 + abs(nextState.nowPlaying-2)
+      return nextState
     
     case "INIT":
-      return GameState(room: action["room"].intValue, board: parseBoard(emptyBoard()))
+      nextState.board = parseBoard(emptyBoard())
+      return nextState
     
     default:
-      return nextState!
+      return nextState
   }
 }
 
