@@ -19,9 +19,8 @@ class Game {
   var state:GameState? = nil
   let socket = SocketIOClient(socketURL: NSURL(string: "http://localhost:3000")!, options: [.Log(true), .ForcePolling(true)])
   
-  init(size: Int, room: Int = Int.random(1000...9999)) {
-    let board = parseBoard(emptyBoard(size))
-    state = GameState(room: room, board: board)
+  init(room: Int = Int.random(1000...9999)) {
+    dispatch(["type": "INIT", "room": room])
     startListening(room)
   }
   
@@ -41,16 +40,13 @@ class Game {
   
   // Dispatch function
   func dispatch(action: JSON, fromUpdate: Bool = false) {
-    guard let state = state else {
-      print("State not initialized")
-      return
-    }
-    
+    print("Idemo dispatch ", action)
     self.state = mutate(action, state: state)
+    print("novi state je ", self.state)
     notify(self.state!)
     if !fromUpdate && action["type"] == "MOVE" {
       var sendAction = action
-      sendAction["room"].int = state.room
+      sendAction["room"].int = state!.room
       socket.emit("update", sendAction.object)
     }
   }
@@ -62,69 +58,10 @@ class Game {
     }
     
     socket.on("update") { data, ack in
+      print("Go update!", data)
       self.dispatch(JSON(arrayLiteral: data[0])[0], fromUpdate: true)
     }
     
     socket.connect()
   }
-  
-  // Create empty board
-  func emptyBoard(size: Int) -> [[Int]] {
-    var emptyBoard = [[Int]]()
-    for _ in 0..<size {
-      var row = [Int]()
-      for _ in 0..<size {
-        row.append(0)
-      }
-      
-      emptyBoard.append(row)
-    }
-    
-    return emptyBoard
-  }
-  
-  // Transform numeric board to enum
-  func parseBoard(board: [[Int]]) -> [[FieldState]] {
-    var newBoard = [[FieldState]]()
-    for x in 0..<board.count {
-      var row = [FieldState]()
-      for y in 0..<board.count {
-        row.append(intToFieldState(board[x][y]))
-      }
-      
-      newBoard.append(row)
-    }
-    
-    return newBoard
-  }
-  
-  func intToFieldState(i: Int) -> FieldState {
-    switch i {
-    case 0:
-      return .Empty
-    case 1:
-      return .X
-    case 2:
-      return .O
-    default:
-      return .Empty
-    }
-  }
-  /*
-  func move(x: Int, y: Int) -> FieldState {
-    guard var board = board else {
-      print("Board not defined")
-      return .Empty
-    }
-    
-    print("New move ", x, y, board[x][y])
-    if board[x][y] == FieldState.Empty || board[x][y] == FieldState.O {
-      self.board![x][y] = .X
-    } else {
-      self.board![x][y] = .O
-    }
-
-    return self.board![x][y]
-  }*/
-  
 }
