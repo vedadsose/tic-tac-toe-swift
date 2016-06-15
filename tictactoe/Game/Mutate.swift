@@ -15,5 +15,5 @@ func mutate(action: JSON, state: GameState) -> GameState {
   if action["type"].stringValue == "MOVE" {
     board[action["y"].intValue][action["x"].intValue] = action["player"].intValue == 1 ? .X : .O
   }
-  return GameState(room: 420, board: board)
+  return GameState(room: state.room, board: board)
 }

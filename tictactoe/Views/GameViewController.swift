@@ -13,6 +13,9 @@ class GameViewController: UIViewController, SubscriberDelegate {
   // Outlets
   @IBOutlet weak var board: UIView!
   
+  // Game
+  var game: Game? = nil
+  
   // Listening to the state
   func update(state: GameState) {
     print("Update ", state)
@@ -29,7 +32,12 @@ class GameViewController: UIViewController, SubscriberDelegate {
   // Render the board
   override func viewDidLoad() {
     super.viewDidLoad()
-        
+    
+    guard let game = game else {
+      print("Game not initialized")
+      return
+    }
+    
     // Subscribe to app delegate
     game.subscribe(self)
     

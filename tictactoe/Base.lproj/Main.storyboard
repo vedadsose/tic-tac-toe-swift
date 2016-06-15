@@ -3,9 +3,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="URWGeometric-ExtraBold.otf">
+            <string>URWGeometric-ExtraBold</string>
+            <string>URWGeometric-ExtraBold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--Tic Tac Toe-->
+        <!--Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="Menu" id="BYZ-38-t0r" customClass="MenuViewController" customModule="tictactoe" customModuleProvider="target" sceneMemberID="viewController">
@@ -14,33 +21,63 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moO-gb-Rg7">
-                                <rect key="frame" x="240" y="208" width="120" height="120"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome" translatesAutoresizingMaskIntoConstraints="NO" id="ykf-LA-0XF">
+                                <rect key="frame" x="35" y="30" width="305" height="305"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="6D8-cE-gLi"/>
-                                    <constraint firstAttribute="height" constant="120" id="HHp-bX-QrK"/>
+                                    <constraint firstAttribute="width" secondItem="ykf-LA-0XF" secondAttribute="height" multiplier="1:1" id="k15-N4-C2B"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="Play"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVJ-ne-ugs">
+                                <rect key="frame" x="35" y="493" width="305" height="60"/>
+                                <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="l8C-U4-t6m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="URWGeometric-ExtraBold" family="URW Geometric" pointSize="30"/>
+                                <state key="normal" title="find game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idu-Ud-cI9">
+                                <rect key="frame" x="35" y="413" width="305" height="60"/>
+                                <color key="backgroundColor" red="0.396078431372549" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="l4N-VY-244"/>
+                                    <constraint firstAttribute="height" constant="60" id="ouw-cD-xlW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="URWGeometric-ExtraBold" family="URW Geometric" pointSize="30"/>
+                                <state key="normal" title="new game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.23669709263015548" green="0.56462823275862073" blue="0.81691810344827587" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="moO-gb-Rg7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Qho-SK-fbL"/>
-                            <constraint firstItem="moO-gb-Rg7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TgQ-qz-f1d"/>
+                            <constraint firstAttribute="trailing" secondItem="Idu-Ud-cI9" secondAttribute="trailing" constant="35" id="8Qi-to-TFJ"/>
+                            <constraint firstItem="ykf-LA-0XF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="35" id="CJC-so-AU4"/>
+                            <constraint firstItem="fVJ-ne-ugs" firstAttribute="top" secondItem="Idu-Ud-cI9" secondAttribute="bottom" constant="20" id="FY0-aa-bP1"/>
+                            <constraint firstAttribute="trailing" secondItem="fVJ-ne-ugs" secondAttribute="trailing" constant="35" id="Orz-cw-ovs"/>
+                            <constraint firstItem="ykf-LA-0XF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="PmI-fS-1fT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fVJ-ne-ugs" secondAttribute="bottom" constant="50" id="aZl-hH-Dvh"/>
+                            <constraint firstAttribute="trailing" secondItem="ykf-LA-0XF" secondAttribute="trailing" constant="35" id="g3R-0S-JIG"/>
+                            <constraint firstItem="fVJ-ne-ugs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="35" id="mmT-Ff-snW"/>
+                            <constraint firstItem="Idu-Ud-cI9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="35" id="zsf-TL-fQO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tic Tac Toe" id="ssI-58-qQ9"/>
+                    <navigationItem key="navigationItem" id="ssI-58-qQ9"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="playButton" destination="moO-gb-Rg7" id="9ml-eS-uMs"/>
+                        <outlet property="findGame" destination="fVJ-ne-ugs" id="va3-kw-acW"/>
+                        <outlet property="newGame" destination="Idu-Ud-cI9" id="Vzx-JH-eHX"/>
                         <segue destination="VH5-nU-6Kh" kind="show" identifier="GoToGame" id="uxV-sq-yu5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1173" y="348"/>
+            <point key="canvasLocation" x="1172.5" y="347.5"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="38G-IP-MAd">
@@ -51,11 +88,11 @@
                         <viewControllerLayoutGuide type="bottom" id="6EF-K2-hDO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6Zn-ll-R0r">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFC-0P-SDu">
-                                <rect key="frame" x="150" y="118" width="300" height="300"/>
+                                <rect key="frame" x="38" y="152" width="300" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="NSM-iu-8fZ"/>
@@ -63,7 +100,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.23669709259999999" green="0.56462823279999996" blue="0.81691810340000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IFC-0P-SDu" firstAttribute="centerX" secondItem="6Zn-ll-R0r" secondAttribute="centerX" id="Z9L-VY-kRK"/>
                             <constraint firstItem="IFC-0P-SDu" firstAttribute="centerY" secondItem="6Zn-ll-R0r" secondAttribute="centerY" id="g5g-Dr-4SZ"/>
@@ -85,8 +123,8 @@
                     <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" id="mS7-FO-Kxa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.23669709259999999" green="0.56462823279999996" blue="0.81691810340000004" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.23669709259999999" green="0.56462823279999996" blue="0.81691810340000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -99,6 +137,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Play" width="64" height="64"/>
+        <image name="welcome" width="604" height="604"/>
     </resources>
 </document>

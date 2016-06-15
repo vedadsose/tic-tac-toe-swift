@@ -19,10 +19,10 @@ class Game {
   var state:GameState? = nil
   let socket = SocketIOClient(socketURL: NSURL(string: "http://localhost:3000")!, options: [.Log(true), .ForcePolling(true)])
   
-  init(size: Int) {
+  init(size: Int, room: Int = Int.random(1000...9999)) {
     let board = parseBoard(emptyBoard(size))
-    state = GameState(room: 420, board: board)
-    startListening()
+    state = GameState(room: room, board: board)
+    startListening(room)
   }
   
   // Subscribers handling
@@ -40,7 +40,7 @@ class Game {
   }
   
   // Dispatch function
-  func dispatch(action: JSON) {
+  func dispatch(action: JSON, fromUpdate: Bool = false) {
     guard let state = state else {
       print("State not initialized")
       return
@@ -48,19 +48,21 @@ class Game {
     
     self.state = mutate(action, state: state)
     notify(self.state!)
-    if action["type"] == "MOVE" {
-      socket.emit("update", action.object)
+    if !fromUpdate && action["type"] == "MOVE" {
+      var sendAction = action
+      sendAction["room"].int = state.room
+      socket.emit("update", sendAction.object)
     }
   }
   
   // Web socket listener
-  func startListening() {
+  func startListening(room: Int) {
     socket.on("connect") {data, ack in
-      self.socket.emit("join", 420)
+      self.socket.emit("join", room)
     }
     
     socket.on("update") { data, ack in
-      self.dispatch(JSON(arrayLiteral: data[0])[0])
+      self.dispatch(JSON(arrayLiteral: data[0])[0], fromUpdate: true)
     }
     
     socket.connect()

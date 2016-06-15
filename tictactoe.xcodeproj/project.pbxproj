@@ -12,6 +12,7 @@
 		965C40E21D0B83F1003A5F44 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C40E11D0B83F1003A5F44 /* Game.swift */; };
 		965C40E41D0B84C4003A5F44 /* Mutate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C40E31D0B84C4003A5F44 /* Mutate.swift */; };
 		965C40E61D0B85EE003A5F44 /* SubscriberDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965C40E51D0B85EE003A5F44 /* SubscriberDelegate.swift */; };
+		965C40EA1D0C29DB003A5F44 /* URWGeometric-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 965C40E91D0C29DB003A5F44 /* URWGeometric-ExtraBold.otf */; };
 		969FECC21D007D7A002A708C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969FECC11D007D7A002A708C /* AppDelegate.swift */; };
 		969FECC71D007D7A002A708C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969FECC51D007D7A002A708C /* Main.storyboard */; };
 		969FECC91D007D7A002A708C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 969FECC81D007D7A002A708C /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		969FECE21D007D7A002A708C /* tictactoeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969FECE11D007D7A002A708C /* tictactoeUITests.swift */; };
 		96BEC94D1D0A064F0000D0B3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BEC94C1D0A064F0000D0B3 /* GameViewController.swift */; };
 		96BEC9511D0A0C1D0000D0B3 /* UIFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BEC9501D0A0C1D0000D0B3 /* UIFieldView.swift */; };
+		96C04EA61D11C46B001F7200 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C04EA51D11C46B001F7200 /* Random.swift */; };
 		96F6EC3A1D060766004D98D9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F6EC391D060766004D98D9 /* MenuViewController.swift */; };
 		EAC36D7C01C0B8EA91778F34 /* Pods_tictactoeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB060F3AE2820C7D433BED63 /* Pods_tictactoeTests.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +54,7 @@
 		965C40E11D0B83F1003A5F44 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		965C40E31D0B84C4003A5F44 /* Mutate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mutate.swift; sourceTree = "<group>"; };
 		965C40E51D0B85EE003A5F44 /* SubscriberDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriberDelegate.swift; sourceTree = "<group>"; };
+		965C40E91D0C29DB003A5F44 /* URWGeometric-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "URWGeometric-ExtraBold.otf"; sourceTree = "<group>"; };
 		969FECBE1D007D79002A708C /* tictactoe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tictactoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		969FECC11D007D7A002A708C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		969FECC61D007D7A002A708C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		969FECE31D007D7A002A708C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96BEC94C1D0A064F0000D0B3 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = Views/GameViewController.swift; sourceTree = "<group>"; };
 		96BEC9501D0A0C1D0000D0B3 /* UIFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIFieldView.swift; path = Views/UIFieldView.swift; sourceTree = "<group>"; };
+		96C04EA51D11C46B001F7200 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Random.swift; path = Resources/Extensions/Random.swift; sourceTree = "<group>"; };
 		96F6EC391D060766004D98D9 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Views/MenuViewController.swift; sourceTree = "<group>"; };
 		AB060F3AE2820C7D433BED63 /* Pods_tictactoeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tictactoeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3822EB5A29B7242F672D81 /* Pods-tictactoeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tictactoeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-tictactoeUITests/Pods-tictactoeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +135,23 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
+		965C40E71D0C29DB003A5F44 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				965C40E81D0C29DB003A5F44 /* URWGeometric */,
+			);
+			name = Fonts;
+			path = Resources/Fonts;
+			sourceTree = "<group>";
+		};
+		965C40E81D0C29DB003A5F44 /* URWGeometric */ = {
+			isa = PBXGroup;
+			children = (
+				965C40E91D0C29DB003A5F44 /* URWGeometric-ExtraBold.otf */,
+			);
+			path = URWGeometric;
+			sourceTree = "<group>";
+		};
 		969FECB51D007D79002A708C = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +177,7 @@
 		969FECC01D007D7A002A708C /* tictactoe */ = {
 			isa = PBXGroup;
 			children = (
+				96C04EA41D11C460001F7200 /* Resources */,
 				96F6EC3B1D06076B004D98D9 /* Views */,
 				965C40E01D0B83F1003A5F44 /* Game */,
 				969FECC11D007D7A002A708C /* AppDelegate.swift */,
@@ -184,6 +206,23 @@
 				969FECE31D007D7A002A708C /* Info.plist */,
 			);
 			path = tictactoeUITests;
+			sourceTree = "<group>";
+		};
+		96C04EA41D11C460001F7200 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				96C04EA71D11C46F001F7200 /* Extensions */,
+				965C40E71D0C29DB003A5F44 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		96C04EA71D11C46F001F7200 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				96C04EA51D11C46B001F7200 /* Random.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		96F6EC3B1D06076B004D98D9 /* Views */ = {
@@ -308,6 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965C40EA1D0C29DB003A5F44 /* URWGeometric-ExtraBold.otf in Resources */,
 				969FECCC1D007D7A002A708C /* LaunchScreen.storyboard in Resources */,
 				969FECC91D007D7A002A708C /* Assets.xcassets in Resources */,
 				969FECC71D007D7A002A708C /* Main.storyboard in Resources */,
@@ -458,6 +498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96C04EA61D11C46B001F7200 /* Random.swift in Sources */,
 				969FECC21D007D7A002A708C /* AppDelegate.swift in Sources */,
 				965C40E61D0B85EE003A5F44 /* SubscriberDelegate.swift in Sources */,
 				965C40E41D0B84C4003A5F44 /* Mutate.swift in Sources */,

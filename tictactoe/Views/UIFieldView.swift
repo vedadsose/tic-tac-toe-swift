@@ -49,7 +49,7 @@ class UIFieldView: UIImageView {
       fatalError("Game not defined")
     }
     
-    game.dispatch(["type": "MOVE", "x": x, "y": y, "player": 1, "room": 420])
+    game.dispatch(["type": "MOVE", "x": x, "y": y, "player": 1])
     self.setImage()
   }
   
