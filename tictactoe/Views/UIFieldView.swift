@@ -9,13 +9,13 @@
 import UIKit
 import SwiftyJSON
 
-enum FieldState {
-  case Empty
-  case X
-  case O
+enum FieldState:String {
+  case Empty = ""
+  case X = "X"
+  case O = "O"
 }
 
-class UIFieldView: UIImageView {
+class UIFieldView: UIView {
   
   // Field's coordinates and it's value
   var x:Int
@@ -23,11 +23,13 @@ class UIFieldView: UIImageView {
   var state:FieldState
   var game: Game? = nil
   
-  init(x: Int, y: Int, state: FieldState) {
+  var imageView: UIImageView?
+  
+  init(x: Int, y: Int, state: FieldState, frame: CGRect) {
     self.x = x
     self.y = y
     self.state = state
-    super.init(frame: CGRect())
+    super.init(frame: frame)
     
     // Set current image
     self.setImage()
@@ -36,7 +38,11 @@ class UIFieldView: UIImageView {
     let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(fieldClicked))
     self.userInteractionEnabled = true
     self.addGestureRecognizer(tapGestureRecognizer)
+   
+    // Initialize UILabel for presenting X and O
+    imageView = UIImageView(frame: CGRect(x: frame.size.width/2-20, y: frame.size.height/2-20, width: 40, height: 40))
     
+    self.addSubview(imageView!)
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -55,8 +61,14 @@ class UIFieldView: UIImageView {
   
   // Set image for field's state
   func setImage() {
-    let imageName = state == .X ? "X" : "O"
-    self.image = state != .Empty ? UIImage(named: imageName) : nil
+    if let imageView = imageView {
+      if self.state == .Empty {
+        imageView.image = UIImage()
+      } else {
+        let imageName = self.state == .X ? "X" : "O"
+        imageView.image = UIImage(named: imageName)
+      }
+    }
   }
   
   

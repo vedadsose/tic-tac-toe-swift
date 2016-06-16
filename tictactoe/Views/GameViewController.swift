@@ -54,8 +54,7 @@ class GameViewController: UIViewController, SubscriberDelegate {
 
     for i in 0 ..< n {
       for n in 0 ..< n {
-        let fieldView = UIFieldView(x: i, y: n, state: .Empty)
-        fieldView.frame = CGRect(x: size*n, y: size*i, width: size, height: size)
+        let fieldView = UIFieldView(x: i, y: n, state: .Empty, frame: CGRect(x: size*n, y: size*i, width: size, height: size))
         fieldViews.append(fieldView)
       }
     }
