@@ -26,8 +26,9 @@ class tictactoeTests: XCTestCase {
       XCTAssertEqual(won([[.X, .O, .O], [.X, .O, .X], [.X, .X, .O]]), ["type" : "column", "column" : 1, "winner" : 1])
       XCTAssertEqual(won([[.X, .O, .X], [.O, .O, .O], [.O, .X, .X]]), ["type" : "row", "row" : 2, "winner" : 2])
       XCTAssertEqual(won([[.X, .O, .O], [.O, .X, .X], [.X, .O, .X]]), ["type" : "diagonal", "direction": "right", "winner" : 1])
+      XCTAssertEqual(won([[.O, .O, .X], [.X, .X, .O], [.O, .X, .O]]), ["winner": 0])
 
-      XCTAssertFalse(won([[.O, .O, .X], [.X, .X, .O], [.O, .X, .O]]))
+      XCTAssertFalse(won([[.O, .O, .X], [.X, .X, .Empty], [.O, .X, .O]]))
   }
     
     func testPerformanceExample() {

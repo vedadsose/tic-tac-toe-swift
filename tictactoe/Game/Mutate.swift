@@ -120,12 +120,17 @@ func won(board: [[FieldState]]) -> JSON {
     if column[1] == board.count { return [ "winner": 2, "type": "column", "column": x+1 ] }
   }
   
-  // Check for winners in diagonal
+  // Check for winners diagonally
   if diagonal[0][0] == board.count { return [ "winner": 1, "type": "diagonal", "direction": "right" ] }
   if diagonal[0][1] == board.count { return [ "winner": 2, "type": "diagonal", "direction": "right" ] }
 
   if diagonal[1][0] == board.count { return [ "winner": 1, "type": "diagonal", "direction": "left" ] }
   if diagonal[1][1] == board.count { return [ "winner": 2, "type": "diagonal", "direction": "left" ] }
+  
+  // If the game is tied
+  if board.filter({ $0.filter({ $0 == FieldState.Empty }).count > 0 }).count == 0 {
+    return [ "winner": 0 ]
+  }
   
   return false
 }
