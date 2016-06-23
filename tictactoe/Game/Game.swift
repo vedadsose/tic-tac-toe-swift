@@ -41,9 +41,7 @@ class Game {
   
   // Dispatch function
   func dispatch(action: JSON, fromUpdate: Bool = false) {
-    print("Idemo dispatch ", action)
     self.state = mutate(action, state: state)
-    print("novi state je ", self.state)
     notify(self.state!)
     if !fromUpdate && action["type"] == "MOVE" {
       var sendAction = action
@@ -59,7 +57,6 @@ class Game {
     }
     
     socket.on("update") { data, ack in
-      print("Go update!", data)
       self.dispatch(JSON(arrayLiteral: data[0])[0], fromUpdate: true)
     }
     

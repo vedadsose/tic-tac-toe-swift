@@ -2,11 +2,13 @@ PODS:
   - Socket.IO-Client-Swift (6.1.2)
   - Spring (1.0.3)
   - SwiftyJSON (2.3.2)
+  - SwiftyTimer (1.4.0)
 
 DEPENDENCIES:
   - Socket.IO-Client-Swift
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
   - SwiftyJSON
+  - SwiftyTimer
 
 EXTERNAL SOURCES:
   Spring:
@@ -22,7 +24,8 @@ SPEC CHECKSUMS:
   Socket.IO-Client-Swift: 60a60e8bfd7b16bc57c90ff6329e9f536b5eacdd
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  SwiftyTimer: db4458cfaf67fc71e16ad6e4637c60b86f76a649
 
-PODFILE CHECKSUM: 3ff3d8975a7e95f08a05a24e2bc93114d6be02d8
+PODFILE CHECKSUM: b3660bbff856a5619a973a4f6b1efdf8b4193b1f
 
 COCOAPODS: 1.0.0

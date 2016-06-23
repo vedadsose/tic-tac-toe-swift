@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyTimer
 
 class GameViewController: UIViewController, SubscriberDelegate {
   
@@ -26,6 +27,13 @@ class GameViewController: UIViewController, SubscriberDelegate {
         field.setImage()
       }
     })
+    
+    let winner = won(state.board)
+    if winner != false {
+      NSTimer.after(2.5.seconds) {
+        self.game?.dispatch(["type": "INIT"])
+      }
+    }
   }
   
   // Render the board

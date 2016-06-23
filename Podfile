@@ -8,6 +8,7 @@ target 'tictactoe' do
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
   pod 'Socket.IO-Client-Swift'
   pod 'SwiftyJSON'
+  pod 'SwiftyTimer'
 
   target 'tictactoeTests' do
     inherit! :search_paths
