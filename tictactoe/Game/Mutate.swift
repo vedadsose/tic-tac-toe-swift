@@ -29,7 +29,7 @@ func mutate(action: JSON, state: GameState?) -> GameState {
       if (nextState.board[x][y] != .Empty) { return nextState }
       
       // Can't play if someone won
-      if(nextState.won()) { return nextState }
+      if(won(nextState.board)) { return nextState }
       
       nextState.board[x][y] = action["player"].intValue == 1 ? .X : .O
       nextState.nowPlaying = 1 + abs(nextState.nowPlaying-2)
@@ -85,4 +85,44 @@ func emptyBoard() -> [[Int]] {
   }
   
   return emptyBoard
+}
+
+func won(board: [[FieldState]]) -> Bool {
+  var diagonal = [[0, 0], [0, 0]]
+  
+  for x in 0..<board.count {
+    var row = [0, 0]
+    var column = [0, 0]
+  
+    for y in 0..<board.count {
+      // Row
+      if board[x][y] == .X { row[0] += 1}
+      if board[x][y] == .O { row[1] += 1}
+    
+      // Column
+      if board[y][x] == .X { column[0] += 1}
+      if board[y][x] == .O { column[1] += 1}
+    }
+    
+    // Diagonal 1
+    if board[x][x] == .X { diagonal[0][0] += 1}
+    if board[x][x] == .O { diagonal[0][1] += 1}
+    
+    // Diagonal 2
+    if board[board.count-x-1][x] == .X { diagonal[1][0] += 1 }
+    if board[board.count-x-1][x] == .O { diagonal[1][1] += 1 }
+  
+    // Check for winners in row/column
+    if row[0] == board.count { return true }
+    if row[1] == board.count { return true }
+    
+    if column[0] == board.count { return true }
+    if column[1] == board.count { return true }
+  }
+  
+  // Check for winners in diagonal
+  if diagonal[0] == board.count { return true }
+  if diagonal[1] == board.count { return true }
+  
+  return false
 }
