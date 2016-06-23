@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import SwiftyJSON
 @testable import tictactoe
 
 class tictactoeTests: XCTestCase {
@@ -22,9 +23,12 @@ class tictactoeTests: XCTestCase {
     }
     
     func testWon() {
-      XCTAssertTrue(won([[.X, .O, .O], [.X, .O, .X], [.X, .X, .O]]))
-      XCTAssertFalse(won([[.X, .O, .X], [.X, .O, .X], [.O, .X, .O]]))
-    }
+      XCTAssertEqual(won([[.X, .O, .O], [.X, .O, .X], [.X, .X, .O]]), ["type" : "column", "column" : 1, "winner" : 1])
+      XCTAssertEqual(won([[.X, .O, .X], [.O, .O, .O], [.O, .X, .X]]), ["type" : "row", "row" : 2, "winner" : 2])
+      XCTAssertEqual(won([[.X, .O, .O], [.O, .X, .X], [.X, .O, .X]]), ["type" : "diagonal", "direction": "right", "winner" : 1])
+
+      XCTAssertFalse(won([[.O, .O, .X], [.X, .X, .O], [.O, .X, .O]]))
+  }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

@@ -87,7 +87,7 @@ func emptyBoard() -> [[Int]] {
   return emptyBoard
 }
 
-func won(board: [[FieldState]]) -> Bool {
+func won(board: [[FieldState]]) -> JSON {
   var diagonal = [[0, 0], [0, 0]]
   
   for x in 0..<board.count {
@@ -113,16 +113,19 @@ func won(board: [[FieldState]]) -> Bool {
     if board[board.count-x-1][x] == .O { diagonal[1][1] += 1 }
   
     // Check for winners in row/column
-    if row[0] == board.count { return true }
-    if row[1] == board.count { return true }
+    if row[0] == board.count { return [ "winner": 1, "type": "row", "row": x+1 ] }
+    if row[1] == board.count { return [ "winner": 2, "type": "row", "row": x+1 ] }
     
-    if column[0] == board.count { return true }
-    if column[1] == board.count { return true }
+    if column[0] == board.count { return [ "winner": 1, "type": "column", "column": x+1 ] }
+    if column[1] == board.count { return [ "winner": 2, "type": "column", "column": x+1 ] }
   }
   
   // Check for winners in diagonal
-  if diagonal[0] == board.count { return true }
-  if diagonal[1] == board.count { return true }
+  if diagonal[0][0] == board.count { return [ "winner": 1, "type": "diagonal", "direction": "right" ] }
+  if diagonal[0][1] == board.count { return [ "winner": 2, "type": "diagonal", "direction": "right" ] }
+
+  if diagonal[1][0] == board.count { return [ "winner": 1, "type": "diagonal", "direction": "left" ] }
+  if diagonal[1][1] == board.count { return [ "winner": 2, "type": "diagonal", "direction": "left" ] }
   
   return false
 }
