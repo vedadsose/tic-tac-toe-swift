@@ -30,6 +30,15 @@ class GameViewController: UIViewController, SubscriberDelegate {
     
     let winner = won(state.board)
     if winner != false {
+      
+      if winner["winner"].intValue > 0 {
+        let line = UIWinnerLine(info: winner, size: board.frame.width)
+        board.addSubview(line)
+        NSTimer.after(2.5.seconds) {
+          line.removeFromSuperview()
+        }
+      }
+      
       NSTimer.after(2.5.seconds) {
         self.game?.dispatch(["type": "INIT"])
       }
