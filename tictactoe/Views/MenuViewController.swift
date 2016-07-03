@@ -49,9 +49,9 @@ class MenuViewController: UIViewController {
 
       // Initialize the game
       if let room = sender as? Int {
-        gameViewController.game = Game(room: room)
+        gameViewController.game = Game(room: room, player: 1)
       } else {
-        gameViewController.game = Game()
+        gameViewController.game = Game(player: 2)
       }
     }
   }

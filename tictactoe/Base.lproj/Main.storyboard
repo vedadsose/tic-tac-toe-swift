@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qtN-oe-Mgj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qtN-oe-Mgj">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -98,18 +98,40 @@
                                     <constraint firstAttribute="height" constant="300" id="dTE-pt-ZFP"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Room #420 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWf-l2-MT0">
+                                <rect key="frame" x="138" y="523" width="99" height="30"/>
+                                <color key="backgroundColor" red="0.32818635471204194" green="0.32818635471204194" blue="0.32818635471204194" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="EdH-n7-TgG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6EF-K2-hDO" firstAttribute="top" secondItem="JWf-l2-MT0" secondAttribute="bottom" constant="50" id="1pZ-AB-iNG"/>
+                            <constraint firstItem="JWf-l2-MT0" firstAttribute="leading" secondItem="6Zn-ll-R0r" secondAttribute="leading" id="WP6-qH-cCV"/>
                             <constraint firstItem="IFC-0P-SDu" firstAttribute="centerX" secondItem="6Zn-ll-R0r" secondAttribute="centerX" id="Z9L-VY-kRK"/>
+                            <constraint firstItem="JWf-l2-MT0" firstAttribute="centerX" secondItem="6Zn-ll-R0r" secondAttribute="centerX" id="dGd-WG-Isb"/>
                             <constraint firstItem="IFC-0P-SDu" firstAttribute="centerY" secondItem="6Zn-ll-R0r" secondAttribute="centerY" id="g5g-Dr-4SZ"/>
+                            <constraint firstAttribute="trailing" secondItem="JWf-l2-MT0" secondAttribute="trailing" id="uht-tG-n2N"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WP6-qH-cCV"/>
+                                <exclude reference="uht-tG-n2N"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="board" destination="IFC-0P-SDu" id="UFM-zp-kd5"/>
+                        <outlet property="roomNumber" destination="JWf-l2-MT0" id="TqU-Md-JH9"/>
                     </connections>
                 </viewController>
+                <navigationItem id="JoK-zF-3Vw"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Enf-xp-5sG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1819" y="348"/>
@@ -124,6 +146,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

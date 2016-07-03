@@ -18,11 +18,13 @@ struct GameState {
 
 class Game {
   var state:GameState? = nil
-  let socket = SocketIOClient(socketURL: NSURL(string: "http://localhost:3000")!, options: [.Log(true), .ForcePolling(true)])
+  let socket = SocketIOClient(socketURL: NSURL(string: "http://178.62.97.227:3000")!, options: [.Log(true), .ForcePolling(true)])
+  var player = 0
   
-  init(room: Int = Int.random(1000...9999)) {
+  init(room: Int = Int.random(1000...9999), player: Int = 0) {
     dispatch(["type": "INIT", "room": room])
     startListening(room)
+    self.player = player
   }
   
   // Subscribers handling
@@ -30,6 +32,7 @@ class Game {
   
   func subscribe(subscriber: SubscriberDelegate) {
     subscribers.append(subscriber)
+    subscriber.update(state!)
   }
   
   // Notifying the subscribers

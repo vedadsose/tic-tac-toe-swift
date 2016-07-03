@@ -13,14 +13,18 @@ class GameViewController: UIViewController, SubscriberDelegate {
   
   // Outlets
   @IBOutlet weak var board: UIView!
+  @IBOutlet weak var roomNumber: UILabel!
   
   // Game
   var game: Game? = nil
   
   // Listening to the state
   func update(state: GameState) {
-    print("Update ", state)
+   
+    // Update room number
+    roomNumber.text = " Room #\(state.room)  "
     
+    // Update field states
     board.subviews.forEach({ field in
       if let field = field as? UIFieldView {
         field.state = state.board[field.x][field.y]
@@ -28,6 +32,7 @@ class GameViewController: UIViewController, SubscriberDelegate {
       }
     })
     
+    // Check for winner
     let winner = won(state.board)
     if winner != false {
       
@@ -43,6 +48,14 @@ class GameViewController: UIViewController, SubscriberDelegate {
         self.game?.dispatch(["type": "INIT"])
       }
     }
+  }
+  
+  // Styling
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    // Back bar button to white
+    self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
   }
   
   // Render the board
